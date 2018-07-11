@@ -1,0 +1,3 @@
+# JDK 8 needed for being able to download dependencies with TLS 1.2, which is now enforced. See https://github.com/gradle/gradle/issues/5740
+jdk:
+  - openjdk8
