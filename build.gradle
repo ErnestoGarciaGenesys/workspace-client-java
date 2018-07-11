@@ -100,52 +100,52 @@ task execute(type:JavaExec) {
    classpath = sourceSets.main.runtimeClasspath
 }
 
-uploadArchives {
-  repositories {
-    mavenDeployer {
-      beforeDeployment { deployment -> signing.signPom(deployment) }
-
-      repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
-        authentication(userName: ossrhUsername, password: ossrhPassword)
-      }
-
-      snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
-        authentication(userName: ossrhUsername, password: ossrhPassword)
-      }
-
-      pom.project {
-	    name 'Workspace API'	  
-        description 'A Java library to interface to Genesys Workspace public API'
-        url 'https://developer.genhtcc.com/api/workspace/index.html'
-
-        scm {
-          connection 'scm:git:git@github.com:GenesysPureEngage/workspace-client-java.git'
-          developerConnection 'scm:git:git@github.com:GenesysPureEngage/workspace-client-java.git'
-          url 'https://github.com/GenesysPureEngage/workspace-client-java'
-        }
-
-        licenses {
-          license {
-            name 'MIT License'
-            url 'https://opensource.org/licenses/MIT'
-            distribution 'repo'
-          }
-        }
-
-        developers {
-          developer {
-            name 'Genesys Inc'
-            email 'support@genesys.com'
-            organization 'Genesys Inc'
-            organizationUrl 'https://developer.genhtcc.com'
-          }
-        }
-      }
-    }
-  }
-}
-
-nexusStaging {  
-    username = ossrhUsername
-    password = ossrhPassword
-}
+//uploadArchives {
+//  repositories {
+//    mavenDeployer {
+//      beforeDeployment { deployment -> signing.signPom(deployment) }
+//
+//      repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+//        authentication(userName: ossrhUsername, password: ossrhPassword)
+//      }
+//
+//      snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+//        authentication(userName: ossrhUsername, password: ossrhPassword)
+//      }
+//
+//      pom.project {
+//	    name 'Workspace API'
+//        description 'A Java library to interface to Genesys Workspace public API'
+//        url 'https://developer.genhtcc.com/api/workspace/index.html'
+//
+//        scm {
+//          connection 'scm:git:git@github.com:GenesysPureEngage/workspace-client-java.git'
+//          developerConnection 'scm:git:git@github.com:GenesysPureEngage/workspace-client-java.git'
+//          url 'https://github.com/GenesysPureEngage/workspace-client-java'
+//        }
+//
+//        licenses {
+//          license {
+//            name 'MIT License'
+//            url 'https://opensource.org/licenses/MIT'
+//            distribution 'repo'
+//          }
+//        }
+//
+//        developers {
+//          developer {
+//            name 'Genesys Inc'
+//            email 'support@genesys.com'
+//            organization 'Genesys Inc'
+//            organizationUrl 'https://developer.genhtcc.com'
+//          }
+//        }
+//      }
+//    }
+//  }
+//}
+//
+//nexusStaging {
+//    username = ossrhUsername
+//    password = ossrhPassword
+//}
